@@ -74,7 +74,6 @@ private:
 		return searchTreeHelper(node->right, key);
 	}
 
-	// fix the rb tree modified by the delete operation
 	void fixDelete(NodePtr x)
 	{
 		NodePtr s;
@@ -177,7 +176,6 @@ private:
 
 	void deleteNodeHelper(NodePtr node, int key)
 	{
-		// find the node containing key
 		NodePtr z = TNULL;
 		NodePtr x, y;
 		while (node != TNULL)
@@ -243,7 +241,6 @@ private:
 		}
 	}
 
-	// fix the red-black tree
 	void fixInsert(NodePtr k)
 	{
 		NodePtr u; // uncle
@@ -310,7 +307,6 @@ private:
 
 	void printHelper(NodePtr root, string indent, bool last)
 	{
-		// print the tree structure on the screen
 		if (root != TNULL)
 		{
 			cout << indent;
@@ -364,14 +360,12 @@ public:
 		postOrderHelper(this->root);
 	}
 
-	// search the tree for the key k
-	// and return the corresponding node
+	// return the corresponding node for the key
 	NodePtr searchTree(int k)
 	{
 		return searchTreeHelper(this->root, k);
 	}
 
-	// find the node with the minimum key
 	NodePtr minimum(NodePtr node)
 	{
 		while (node->left != TNULL)
@@ -381,7 +375,6 @@ public:
 		return node;
 	}
 
-	// find the node with the maximum key
 	NodePtr maximum(NodePtr node)
 	{
 		while (node->right != TNULL)
@@ -486,8 +479,6 @@ public:
 		x->parent = y;
 	}
 
-	// insert the key to the tree in its appropriate position
-	// and fix the tree
 	void insert(int key)
 	{
 		
