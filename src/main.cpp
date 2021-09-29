@@ -2,19 +2,17 @@
 
 using namespace std;
 
-//node in the tree
 struct Node
 {
-	int data;	  // holds the key
-	Node *parent; // pointer to the parent
-	Node *left;	  // pointer to left child
-	Node *right;  // pointer to right child
+	int data;	  // the key
+	Node *parent;
+	Node *left;
+	Node *right;
 	int color;	  // 1 -> Red, 0 -> Black
 };
 
 typedef Node *NodePtr;
 
-// class RBTree implements the operations in Red Black Tree
 class RBTree
 {
 private:
@@ -492,7 +490,7 @@ public:
 	// and fix the tree
 	void insert(int key)
 	{
-		// Ordinary Binary Search Insertion
+		
 		NodePtr node = new Node;
 		node->parent = nullptr;
 		node->data = key;
